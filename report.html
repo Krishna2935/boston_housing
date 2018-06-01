@@ -11961,7 +11961,7 @@ Standard deviation of prices: $165171.131544
         </li>
     <li> Since the number of lower class neighborhood are more with LSTAT=20 , need more money and prices could be more worth in one scenario. But what I think is that people tend live in a place that could have lesser number of lower class people.The it would be more priceworthy with LSTAT=15.  
         </li>
-    <li> I expect ratio of students to teachers of 10 would be more worthier. 
+    <li> I expect ratio of students to teachers of 10 would be more worthier. Because area which has students to teachers more ratio implies that there are only a few schools around there. So I think education is important to be accessible from nearby .
         </li></ul></em></p>
 
 </div>
@@ -12110,7 +12110,8 @@ Standard deviation of prices: $165171.131544
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> <em>Yes , because this model captured the variation of the target variable with 92.3%. About 92 percent of the variance in y_pred is predictable from y_true.</em></p>
+<p><strong>Answer:</strong> <pre> *   Yes , because this model captured the variation of the target variable with 92.3%. About 92 percent of the variance in y_pred is predictable from y_true.
+    Since it is near R2 score of 1, dependent variable can be predicted from the independent variable . If a model could explain 100% variance, the fitted values would always equals the observed values , therefore all the datapoints would fall on the fitted regression line.*</pre></p>
 
 </div>
 </div>
@@ -12188,7 +12189,7 @@ Standard deviation of prices: $165171.131544
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong> <em>The benefits of splitiing a dataset into some ratio of training and testing subsets are: <ul><li> to know the predictions on some data(past data) to that are really occured(recently occured or the data to be occured)</li><li>by using our trained data by modelling we can now predict the percentage of accuracy using testing data.</li>
 </ul></em></p>
-
+<pre> Actually we need to know whether our model is underfitting , overfitting or just good. For this we need to divide our data into two parts, training data and test data. Train data is used to train our model. Test data is used to test against trained data to know our model performance. And we cannot use test data performance to improve our model, because it will be a bias then.</pre>
 </div>
 </div>
 </div>
@@ -12337,8 +12338,8 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> <pre> *   When the model is trained with a max depth of 1, it suffers from a high bias due lower scores of both training and test data. 
-       And when model with high max depth i.e, 10 will suffer high variance is both the sets(training and test data) are having more score. 
-          I think from that graph what I find is that it suffers from overfitting as thre difference between traing curve and test curve score is more.*</pre></p>
+       And when model with high max depth i.e, 10 will suffer high variance. The training score is much higher than the validation score.
+          I think from that graph what I find is that it suffers from overfitting as the difference between traning curve and test curve score is more.*</pre></p>
 
 </div>
 </div>
@@ -12392,7 +12393,7 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong><pre>    *Grid search technique is the testing technique which tells us the performance of each model on a dataset by using various values for the parameters by representing them like a grid. Then we take a model which gives high performance. 
+<p><strong>Answer: </strong><pre>    *Grid search technique is the hyper-parameter optimization technique which tells us the performance of each model on a dataset, by passing various hyper-parameters to tune and a performance metric also passed. Then the algorithm will place all possible hyper-parameter combination in a grid and find the performance of the model for each combination against some cross-validation set(The grid stores all combinations of hyper-parameters passed).Then it outputs the model which gives high performance. 
 For example we can take electricity charge outcome as target variable, in that the power consumption can be calculated by unit cost, for different types of houses,small scale factories and industries etc.The type of house or industry , cost per unit are the values for parameters.
     This can be applied to optimize a learning algorithm by giving different values to the parameters which predicts the target variable with high percent of accuracy.*</pre></p>
 
@@ -12419,8 +12420,8 @@ For example we can take electricity charge outcome as target variable, in that t
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> <strong>K-fold cross validation training tecnique:</strong> <pre>It is a type of cross validation testing which involves in partitioning the training set into k-subsets and considering each subset once as testing set and remaining all subsets as training set. By averaging all the accuracies obtained in the above process we predict the accuracy of our model.
-    In grid search testing we will have chance to give multiple value to the parameters on multiple models then we select on that performs well.But eith k-fold testing we can test on a single model with different traing sets and testing sets.</pre></p>
+<p><strong>Answer: </strong> <strong>K-fold cross validation training tecnique:</strong> <pre>It is a type of cross validation technique which involves in partitioning the training set into k-subsets and considering each subset once as testing set and remaining all k-1 subsets as training set. By iterating over these sets we can find the performance of each subset. By averaging all the accuracies obtained in the above process we predict the accuracy of our model.
+    The benefits are that we can estimate model performance of various parameter values during grid search. In grid search, there is a danger to overfit to the validation set since we use it many times to evaluate performance of different points on the grid and choose a point that delivered good performance. With cross validation, the overfitting problem is mitigated since our effective validation set size is larger.</pre></p>
 
 </div>
 </div>
@@ -12741,7 +12742,8 @@ Range in prices: $69,044.61
     <li>The festures present in the data set could not be sufficient because some other preferences like quality of appliances in the home , area of the plot, presence of pool, play ground for children, parking area, peaceful surroundings, little away from disturbances etc would also helps in predicting a suitable cost for the requirements seeked by the customer.</li>
     <li>The model is not robust enough to make consistent predictions because if we see the trails obtained above, the range of the data is pretty high that it never give sufficient results.</li>
     <li>The data collected in a urban city like Boston will not be applicable in a rural city beacuse in rural areas the cost of houses are quiet low compared to the city. This is because most of the companies, high schools and hospitals are all located in cities and people tend to live near them as it is easier to avail them. Thats cost of houses in the cities are more.</li>
-    <li>It's not fair to judge the price of an individual home based on the charateristics of the entire neighborhood. Some times the situations may change that there may come companies , schools and hospitals to be available to all the people in the city.</li></ul></p>
+    <li>It's not fair to judge the price of an individual home based on the charateristics of the entire neighborhood. Some times the situations may change that there may come companies , schools and hospitals to be available to all the people in the city.</li></ul>
+    <pre> Yes the constructed model can be used in real world setting , if it was on the days where data was collected. But for now based on factors(additional factors likke swimming pool,home appliances,area of plot etc) which may cause more reliability of data consistency. I think we need to do more modifications to the model.</pre></p>
 
 </div>
 </div>
